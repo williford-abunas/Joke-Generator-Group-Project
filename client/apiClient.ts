@@ -6,6 +6,7 @@ export async function getGreeting(): Promise<string> {
 }
 
 export async function getWellyWeather() {
-  const response = await request.get('api/v1/weather/wellington')
+  const response = await request.get('/api/v1/weather/wellington')
+  console.log(response)
   return response.body
 }
