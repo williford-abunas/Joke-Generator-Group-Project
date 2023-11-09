@@ -1,0 +1,21 @@
+body {
+  background-image: url('images/file.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+h1 {
+  color: rgb(221, 137, 10);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+img {
+  width: 70%;
+  height: 70%;
+}
