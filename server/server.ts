@@ -1,6 +1,9 @@
 import * as Path from 'node:path'
 import express from 'express'
 import cors, { CorsOptions } from 'cors'
+
+import weather from './routes/weather'
+
 import request from 'superagent'
 import 'dotenv/config'
 
@@ -33,6 +36,7 @@ server.get('/api/v1/joke', async (req, res) => {
 
 server.use(express.json())
 server.use(cors('*' as CorsOptions))
+server.use('/api/v1/weather/wellington', weather)
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))
