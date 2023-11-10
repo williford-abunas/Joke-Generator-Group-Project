@@ -1,32 +1,8 @@
 import { Outlet } from 'react-router-dom'
 import { useState } from 'react'
 import { getJoke } from '../apiClient'
+import { Dadbtn } from './Dadbtn'
 
-function Dadbtn() {
-  const [joke, setJoke] = useState('default joke')
-
-  const handleClick = () => {
-    getJoke()
-      .then((result) => {
-        console.log(result)
-        setJoke(result.text)
-      })
-      .catch((error) => {
-        console.error(error.message)
-      })
-  }
-
-  return (
-    <>
-      <div className="joke-container">
-        <button onClick={handleClick}>
-          <img src="images/dadbtn.png" alt="dadbodsexyasf" />
-        </button>
-        <p>{joke}</p>
-      </div>
-    </>
-  )
-}
 export default function Layout() {
   return (
     <>
