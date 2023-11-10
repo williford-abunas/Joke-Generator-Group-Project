@@ -1,6 +1,9 @@
 import * as Path from 'node:path'
 import express from 'express'
 import cors, { CorsOptions } from 'cors'
+
+import weather from './routes/weather'
+
 import request from 'superagent'
 import 'dotenv/config'
 
@@ -11,6 +14,7 @@ const server = express()
 
 server.use(express.json())
 server.use(cors('*' as CorsOptions))
+server.use('/api/v1/weather/wellington', weather)
 
 server.get('/api/v1/greeting', (req, res) => {
   const greetings = ['hola', 'hi', 'hello', 'howdy']
