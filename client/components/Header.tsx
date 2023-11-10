@@ -53,7 +53,10 @@ export default function WellyWeather() {
         alt="Weather Icon"
         style={{ height: '30px', width: '30px', position: 'relative' }}
       />
-      <p style={{ color: 'white', fontSize: '20px', paddingLeft: '300px' }}>Why did the weather go to school? <span style={{ color: 'salmon' }}>To get a little brighter!</span></p>
+      <p style={{ color: 'white', fontSize: '20px', paddingLeft: '900px' }}>
+        Why did the weather go to school?{' '}
+        <span style={{ color: 'salmon' }}>To get a little brighter!</span>
+      </p>
     </div>
   )
 }

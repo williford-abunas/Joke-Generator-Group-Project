@@ -7,6 +7,7 @@ body {
 
 h1 {
   color: rgb(221, 137, 10);
+  margin-top: 3.5em;
 }
 
 button {
@@ -24,4 +25,9 @@ p{
 }
 .joke-container{
   
+}
+
+.ai-gen {
+  width: 512px;
+  height: 512px;
 }
