@@ -7,7 +7,14 @@ import weather from './routes/weather'
 import request from 'superagent'
 import 'dotenv/config'
 
+import OpenAI from 'openai'
+const openai = new OpenAI()
+
 const server = express()
+
+server.use(express.json())
+server.use(cors('*' as CorsOptions))
+server.use('/api/v1/weather/wellington', weather)
 
 server.get('/api/v1/greeting', (req, res) => {
   const greetings = ['hola', 'hi', 'hello', 'howdy']
@@ -17,8 +24,6 @@ server.get('/api/v1/greeting', (req, res) => {
 })
 
 server.get('/api/v1/joke', async (req, res) => {
-  console.log('making api request')
-
   if (process.env.KEY == undefined) {
     throw new Error('KEY is undefined')
   }
@@ -34,9 +39,24 @@ server.get('/api/v1/joke', async (req, res) => {
   res.send(jokeObj[0].joke)
 })
 
-server.use(express.json())
-server.use(cors('*' as CorsOptions))
-server.use('/api/v1/weather/wellington', weather)
+server.post('/api/v1/image', async (req, res) => {
+  console.log(req.body.text)
+  try {
+    const response = await openai.images.generate({
+      model: 'dall-e-2',
+      prompt: `Hyper relistic. ${req.body.text}`,
+      n: 1,
+      size: '256x256',
+    })
+    const image_url = response.data[0].url
+    console.log(image_url)
+    res.send(image_url)
+  } catch (error) {
+    console.error('Violates content policy')
+
+    res.render('')
+  }
+})
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))
