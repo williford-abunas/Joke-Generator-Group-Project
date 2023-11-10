@@ -34,27 +34,23 @@ server.get('/api/v1/joke', async (req, res) => {
 
   const jokeObj = response.body
 
-  console.log(jokeObj[0].joke)
-
   res.send(jokeObj[0].joke)
 })
 
 server.post('/api/v1/image', async (req, res) => {
-  console.log(req.body.text)
   try {
     const response = await openai.images.generate({
       model: 'dall-e-2',
-      prompt: `Hyper relistic. ${req.body.text}`,
+      prompt: `Hyper relistic, ${req.body.text}`,
       n: 1,
-      size: '256x256',
+      size: '512x512',
     })
     const image_url = response.data[0].url
-    console.log(image_url)
     res.send(image_url)
   } catch (error) {
     console.error('Violates content policy')
 
-    res.render('')
+    res.send('')
   }
 })
 
