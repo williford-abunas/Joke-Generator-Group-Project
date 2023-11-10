@@ -7,7 +7,9 @@ export function Dadbtn() {
   )
   const [audio, setAudio] = useState('laugh.mp3')
 
-  const [jokeImage, setImage] = useState('images/dadbtn.png')
+  const [jokeImage, setImage] = useState(
+    'https://i.ytimg.com/vi/nvNnGB3tIWk/maxresdefault.jpg'
+  )
 
   const sound = new Audio(audio)
   sound.play()
@@ -26,9 +28,10 @@ export function Dadbtn() {
     <>
       <div className="joke-container">
         <button onClick={handleClick}>
-          <img src={jokeImage} alt="dadbodsexyasf" />
+          <img src="images/dadbtn.png" alt="dadbodsexyasf" />
         </button>
         <p>{joke}</p>
+        <img className="ai-gen" src={jokeImage} alt="AI Generated" />
       </div>
     </>
   )
