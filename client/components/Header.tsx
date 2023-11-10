@@ -12,7 +12,6 @@ export default function WellyWeather() {
   useEffect(() => {
     async function fetchWellyWeather() {
       const wellyWeatherData = await getWellyWeather()
-      console.log(wellyWeatherData)
       const celsiusWeather = { ...wellyWeatherData }
       celsiusWeather.main.temp = kelvinToCelsius(celsiusWeather.main.temp)
       setWeather(wellyWeatherData)

@@ -8,13 +8,6 @@ function HomePage() {
   const [count, setCount] = useState(0)
   const [isError, setIsError] = useState(false)
 
-  async function asyncFunc() {
-    const joke = await getJoke()
-    await generateImage(joke.text)
-  }
-
-  asyncFunc()
-
   useEffect(() => {
     async function updateGreeting() {
       try {

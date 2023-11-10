@@ -9,8 +9,6 @@ router.get('/', async (req, res) => {
   const wellyWeather = await request.get(
     `http://api.openweathermap.org/data/2.5/weather?q=wellington&appid=${APIKey}`
   )
-  console.log(APIKey)
-  console.log(wellyWeather)
   res.json(wellyWeather.body)
 })
 

@@ -7,7 +7,6 @@ export async function getGreeting(): Promise<string> {
 
 export async function getWellyWeather() {
   const response = await request.get('/api/v1/weather/wellington')
-  console.log(response)
   return response.body
 }
 export async function getJoke() {
@@ -15,7 +14,5 @@ export async function getJoke() {
 }
 
 export async function generateImage(prompt: string) {
-  console.log(prompt)
-
   return await request.post('/api/v1/image/').send({ text: prompt })
 }
