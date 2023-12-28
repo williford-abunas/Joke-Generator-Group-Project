@@ -24,7 +24,7 @@ export default function WellyWeather() {
       style={{
         display: 'flex',
         width: '100%',
-        height: '40px',
+        height: '30px',
         backgroundColor: 'slategray',
         position: 'fixed',
         top: '0',
@@ -33,16 +33,16 @@ export default function WellyWeather() {
         borderBottom: '3px solid black',
       }}
     >
-      <p style={{ color: 'white', fontSize: '20px', paddingLeft: '10px' }}>
+      <p style={{ color: 'white', fontSize: '14px', paddingLeft: '10px' }}>
         {weather?.name}, {weather?.sys.country} ||
       </p>
-      <p style={{ fontSize: '20px', color: 'salmon' }}>
+      <p style={{ fontSize: '14px', color: 'salmon' }}>
         <span style={{ color: 'white' }}>
           <span style={{ color: 'lightslategray' }}>_</span>Temp:
         </span>
         {weather?.main.temp} &deg;C
       </p>
-      <p style={{ fontSize: '20px', color: 'salmon' }}>
+      <p style={{ fontSize: '14px', color: 'salmon' }}>
         <span style={{ color: 'white' }}>
           <span style={{ color: 'lightslategray' }}>_</span>|| Weather:
         </span>
@@ -53,7 +53,7 @@ export default function WellyWeather() {
         alt="Weather Icon"
         style={{ height: '30px', width: '30px', position: 'relative' }}
       />
-      <p style={{ color: 'white', fontSize: '20px', paddingLeft: '900px' }}>
+      <p style={{ color: 'white', fontSize: '14px', paddingLeft: '300px' }}>
         Why did the weather go to school?{' '}
         <span style={{ color: 'salmon' }}>To get a little brighter!</span>
       </p>
